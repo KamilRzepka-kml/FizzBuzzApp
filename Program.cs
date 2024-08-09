@@ -21,6 +21,7 @@ namespace FizzBuzzApp
                 var userNumber = NumberChecked();
 
                 Console.WriteLine(fizzBuzz.GetNumber(userNumber));
+                Console.WriteLine("W celu zamknięcia aplikacji naciśnij 'x' ");
                 continue;
             }
 
@@ -30,6 +31,11 @@ namespace FizzBuzzApp
         {
             while (true)
             {
+                // w celu zamknięcia aplikacji
+                var val = Console.ReadLine();
+                if (val.ToUpper() == "X")
+                    Environment.Exit(0);
+
                 if (!int.TryParse(Console.ReadLine(), out var number))
                 {
                     Console.WriteLine("Podana wartość nie jest liczbą całkowitą. \nSpróbuj ponownie \nPodajliczbę: ");
